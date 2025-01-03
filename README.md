@@ -1,3 +1,5 @@
+![MovieCenter Logo](https://via.placeholder.com/150)
+
 # MovieCenter
 
 🎬 MovieCenter, modern Android uygulama geliştirme pratiklerini kullanarak film ve video içeriği keşfetmenizi sağlayan bir uygulamadır. Bu projede Retrofit, OkHttp, Jetpack Compose, Jetpack Navigation ve diğer birçok popüler kütüphane entegre edilmiştir.
@@ -10,7 +12,7 @@ MovieCenter, aşağıdaki adımları izleyerek kolayca kurulabilir:
 
 1. Projeyi klonlayın:
     ```bash
-    git clone https://github.com/muhammedsarisoy/MovieCenter.git
+    git clone https://github.com/kullaniciadi/MovieCenter.git
     ```
 2. Android Studio ile projeyi açın.
 3. `build.gradle` dosyalarının bağımlılıklarının yüklendiğinden emin olun.
@@ -86,10 +88,25 @@ implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
 ## 📸 Ekran Görüntüleri
 
 ### YouTube Fragman Oynatıcı
-![YouTube Player](https://www.youtube.com/shorts/vPZDKscaO30)
+![YouTube Player](https://via.placeholder.com/500x300)
+
+### Video Tanıtımı
+YouTube'da uygulamanın kısa bir tanıtım videosunu izlemek için aşağıdaki bağlantıyı kullanabilirsiniz:
+[![YouTube Tanıtım Videosu](https://img.youtube.com/vi/vPZDKscaO30/0.jpg)](https://www.youtube.com/shorts/vPZDKscaO30)
 
 ---
 
 ## 🔖 Lisans
-Bu proje [MIT Lisansı](LICENSE) altında lisanslanmıştır.
+Bu proje MIT Lisansı altında lisanslanmıştır.
+
+MIT Lisansı, açık kaynak yazılım lisansı türlerinden biridir. Bu lisans şu hakları sağlar:
+
+- **Kullanım İzni**: Kodu istediğiniz gibi kullanabilirsiniz.
+- **Dağıtım İzni**: Kodu dağıtabilir ve paylaşabilirsiniz.
+- **Değiştirme ve Ticaret**: Kodu değiştirebilir ve ticari projelerinizde kullanabilirsiniz.
+
+Ancak şu koşullara dikkat edilmelidir:
+
+1. Yazılım "olduğu gibi" sağlanır, yani herhangi bir garanti verilmez.
+2. Lisans metni proje ile birlikte paylaşılmalıdır. Detaylı bilgi için [LICENSE](LICENSE) dosyasına göz atabilirsiniz.
 
