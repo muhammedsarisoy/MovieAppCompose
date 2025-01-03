@@ -1,5 +1,3 @@
-![MovieCenter Logo](https://via.placeholder.com/150)
-
 # MovieCenter
 
 🎬 MovieCenter, modern Android uygulama geliştirme pratiklerini kullanarak film ve video içeriği keşfetmenizi sağlayan bir uygulamadır. Bu projede Retrofit, OkHttp, Jetpack Compose, Jetpack Navigation ve diğer birçok popüler kütüphane entegre edilmiştir.
