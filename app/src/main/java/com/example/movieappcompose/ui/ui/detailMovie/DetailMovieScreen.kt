@@ -67,7 +67,6 @@ fun DetailMovieScreen(
     val movieDetail by viewModel.movieDetail.observeAsState()
     val movieVideos by viewModel.movieVideos.observeAsState()
     val movieCredits by viewModel.movieCredits.observeAsState()
-    val errorMessage by viewModel.errorMessage.observeAsState()
 
     LaunchedEffect(movieId) {
         viewModel.getMovieDetails(movieId)

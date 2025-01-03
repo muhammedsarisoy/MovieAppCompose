@@ -8,6 +8,7 @@ import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -101,7 +102,7 @@ fun PopularMoviesScreen(
                 )
 
                 Text(
-                    text = "Upcoming movies:",
+                    text = "Popular Movies:",
                     style = MaterialTheme.typography.headlineLarge,
                     fontSize = 20.sp,
                     modifier = Modifier.padding(top = 16.dp, start = 16.dp, end = 16.dp),
@@ -115,6 +116,10 @@ fun PopularMoviesScreen(
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .height(120.dp)
+                                .clickable {
+                                    viewModel.setSelectedMovieId(movie.id)
+                                    navController.navigate("DetailMovieScreen/${movie.id}")
+                                }
                         ) {
                             Row(
                                 verticalAlignment = Alignment.CenterVertically,

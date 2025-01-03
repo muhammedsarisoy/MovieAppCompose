@@ -6,25 +6,14 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material3.BottomAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
@@ -34,8 +23,6 @@ import com.example.movieappcompose.ui.theme.MyappTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -47,6 +34,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.movieappcompose.R
 import com.example.movieappcompose.ui.ui.navigation.BottomItem
 import com.example.movieappcompose.ui.ui.navigation.NavigationGraph
+
 
 class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.Q)
@@ -62,17 +50,13 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     topBar = {
                         TopAppBar(
-                            title = {
-                                Text("MovieCenter", fontSize = 24.sp, textAlign = TextAlign.Center, fontFamily = Kanit, color = MaterialTheme.colorScheme.primary,) },
-                            actions = { IconButton(onClick = { /* TODO */ }) { Icon(Icons.Filled.Settings, contentDescription = "Settings") } }) },
+                            title = { Text("MovieCenter", fontSize = 24.sp, textAlign = TextAlign.Center, fontFamily = Kanit, color = MaterialTheme.colorScheme.primary) },) },
                     bottomBar = {
                         BottomNavigationBar(
                             navController = navController,
                             items = listOf(
                                 BottomItem("Home", Icons.Filled.Home, "HomeScreen"),
                                 BottomItem("Search", Icons.Filled.Search, "DetailScreen"),
-                                BottomItem("Favorites", Icons.Filled.Favorite, "FavScreen"),
-                                BottomItem("Profile", Icons.Filled.AccountCircle, "ProfileScreen")
                             ),
                             onItemClick = {
                                 navController.navigate(it.route) {
@@ -88,8 +72,8 @@ class MainActivity : ComponentActivity() {
                     content = { padding ->
                         NavigationGraph(
                             navController = navController,
-                            startDestination = "HomeScreen",
-                            modifier = Modifier.padding(padding)
+                            modifier = Modifier.padding(padding),
+                            startDestination = "HomeScreen"
                         )
                     }
                 )
@@ -97,6 +81,8 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+
 
 @Composable
 fun BottomNavigationBar(

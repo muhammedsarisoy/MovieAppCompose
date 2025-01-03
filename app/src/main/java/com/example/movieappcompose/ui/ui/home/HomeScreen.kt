@@ -59,6 +59,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
+import coil.compose.rememberAsyncImagePainter
 import coil.compose.rememberImagePainter
 import com.bumptech.glide.Glide
 import com.example.movieappcompose.R
@@ -111,7 +112,7 @@ fun HomeScreen(
                 )
 
                 Text(
-                    text = "Upcoming movies:",
+                    text = "Upcoming Movies:",
                     style = MaterialTheme.typography.headlineLarge,
                     fontSize = 20.sp,
                     modifier = Modifier.padding(top = 16.dp, start = 16.dp, end = 16.dp),
@@ -127,7 +128,7 @@ fun HomeScreen(
                                 .height(120.dp)
                                 .clickable {
                                     viewModel.setSelectedMovieId(movie.id)
-                                    navController.navigate("DetailMovieScreen")
+                                    navController.navigate("DetailMovieScreen/${movie.id}")
                                 }
                         ) {
                             Row(
@@ -173,7 +174,7 @@ fun HomeScreen(
 @Composable
 fun TabLayout(navController: NavController) {
     val tabs = listOf("Upcoming", "Popular", "Top Rated")
-    var selectedTabIndex by remember { mutableStateOf(0) }
+    var selectedTabIndex by remember { mutableIntStateOf(0) }
 
     TabRow(
         selectedTabIndex = selectedTabIndex,
@@ -245,7 +246,7 @@ fun AnimatedCarousel(
         if (index < movies.size) {
             val movie = movies[index]
             Image(
-                painter = rememberImagePainter(data = "https://image.tmdb.org/t/p/w500/${movie.poster_path}"),
+                painter = rememberAsyncImagePainter(model = "https://image.tmdb.org/t/p/w500/${movie.poster_path}"),
                 modifier = Modifier
                     .height(205.dp)
                     .maskClip(MaterialTheme.shapes.extraLarge)

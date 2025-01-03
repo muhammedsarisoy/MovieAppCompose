@@ -55,6 +55,7 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation ("com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.1")
+    implementation(libs.datastore.preferences)
     implementation(libs.logging.interceptor)
     implementation(libs.firebase.crashlytics.buildtools)
     implementation(libs.runtime.livedata)

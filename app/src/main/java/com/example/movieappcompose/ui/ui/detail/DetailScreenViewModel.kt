@@ -23,15 +23,8 @@ class DetailScreenViewModel(private val movieRepository: MovieRepository) : View
     private val _selectedMovieId = MutableLiveData<Int>()
     val selectedMovieId: LiveData<Int> get() = _selectedMovieId
 
-    private val _searchMovies = MutableLiveData<List<Result>>()
-    val searchMovies: LiveData<List<Result>> get() = _searchMovies
-
     private val _errorMessage = MutableLiveData<String>()
     val errorMessage: LiveData<String> get() = _errorMessage
-
-
-    private val _favorites = MutableLiveData<List<Result>>()
-    val favorites: LiveData<List<Result>> get() = _favorites
 
     private var currentPage = 1
 
@@ -87,22 +80,7 @@ class DetailScreenViewModel(private val movieRepository: MovieRepository) : View
         }
     }
 
-    fun toggleFavorite(movie: Result) {
-        val currentFavorites = _favorites.value.orEmpty().toMutableList()
-        if (currentFavorites.contains(movie)) {
-            currentFavorites.remove(movie)
-        } else {
-            currentFavorites.add(movie)
-            _favorites.value = currentFavorites
-        }
-    }
-
-    fun isMovieFavorite(movie: Result): Boolean {
-        return _favorites.value.orEmpty().contains(movie)
-    }
-
     fun setSelectedMovieId(id: Int) {
         _selectedMovieId.value = id
     }
-
 }

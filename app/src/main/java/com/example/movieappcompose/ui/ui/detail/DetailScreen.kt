@@ -15,9 +15,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Search
-import androidx.compose.material.icons.outlined.FavoriteBorder
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.Icon
@@ -49,7 +47,6 @@ fun DetailScreen(
 
     var searchQuery by remember { mutableStateOf("") }
     val allMovies by viewModel.allMovies.observeAsState(emptyList())
-    val favorites by viewModel.favorites.observeAsState(emptyList())
     val selectedMovieId by viewModel.selectedMovieId.observeAsState(0)
 
 
@@ -123,17 +120,6 @@ fun DetailScreen(
                                         style = MaterialTheme.typography.bodySmall,
                                         maxLines = 3,
                                         overflow = TextOverflow.Ellipsis
-                                    )
-                                }
-
-                                IconButton(onClick = {
-                                    viewModel.toggleFavorite(movie)
-                                }) {
-                                    val isFavorite = favorites.contains(movie)
-                                    Icon(
-                                        imageVector = if (isFavorite) Icons.Filled.Favorite else Icons.Outlined.FavoriteBorder,
-                                        contentDescription = "Favorite",
-                                        tint = if (isFavorite) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface
                                     )
                                 }
                             }
