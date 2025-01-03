@@ -87,7 +87,11 @@ implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.1'
 
 ### Video Tanıtımı
 YouTube'da uygulamanın kısa bir tanıtım videosunu izlemek için aşağıdaki bağlantıyı kullanabilirsiniz:
-https://www.youtube.com/shorts/vPZDKscaO30
+
+
+https://github.com/user-attachments/assets/8f14c00b-d3e2-4939-bd06-cc820e212bdb
+
+
 ---
 
 ## 🔖 Lisans
