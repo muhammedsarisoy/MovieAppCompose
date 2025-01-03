@@ -49,4 +49,5 @@ class MovieRepository(private val networkService: NetworkService) {
     suspend fun getMovieDetail(movieId: Int, apiKey: String) = withContext(Dispatchers.IO) {
         networkService.getMovieDetail(movieId, apiKey)
     }
+
 }

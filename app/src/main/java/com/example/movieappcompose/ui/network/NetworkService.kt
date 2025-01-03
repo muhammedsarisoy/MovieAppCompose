@@ -83,5 +83,4 @@ interface NetworkService {
         @Query("id") id: Int
     ) : MovieResponse
 
-
 }

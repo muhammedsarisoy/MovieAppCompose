@@ -16,7 +16,8 @@ data class CreditsResponse(
 data class Credit(
     val id: Int,
     val name: String,
-    val character: String
+    val character: String,
+    val profile_path: String
 )
 
 data class VideoResponse(
